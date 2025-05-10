@@ -1,0 +1,16 @@
+.imgWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+
+    img {
+        max-width: 100%;
+    }
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+}

@@ -1,0 +1,15 @@
+.app {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper {
+    padding: 12px;
+    min-width: 320px;
+    max-width: 100vw;
+    height: calc(100vh - 24px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 1fr 120px;
+}

@@ -1,0 +1,18 @@
+.tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
+}
+
+.tab {
+    font-weight: 700;
+    color: #7f7f7f;
+    cursor: pointer;
+    &.active {
+        color: black;
+        text-decoration: underline;
+    }
+}

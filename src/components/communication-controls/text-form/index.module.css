@@ -1,0 +1,14 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.input {
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    resize: none;
+    padding: 12px;
+    border: none;
+}
