@@ -1,3 +1,4 @@
+export const CHAT_LOCAL_STORAGE = 'chat_messages'
 export enum COMMUNICATION_TYPE {
   CALL = 'CALL',
   VOICE = 'VOICE',

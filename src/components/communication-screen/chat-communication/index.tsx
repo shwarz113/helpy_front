@@ -2,11 +2,9 @@ import {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import {openaiService} from "../../../service";
 import {MessageItem} from "./message";
 import {CommunicationControls} from "../../communication-controls";
-import {COMMUNICATION_TYPE} from "../../../utils/constants.ts";
+import {CHAT_LOCAL_STORAGE, COMMUNICATION_TYPE} from "../../../utils/constants.ts";
 import styles from './index.module.css'
 import Bg from "../../../assets/text-bg.png";
-
-const LOCAL_STORAGE_KEY = "chat_messages";
 
 type Props = {
   changeType: (v: COMMUNICATION_TYPE) => void
@@ -14,7 +12,7 @@ type Props = {
 
 export function ChatCommunication({changeType}: Props) {
   const [messages, setMessages] = useState(() => {
-    const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
+    const saved = localStorage.getItem(CHAT_LOCAL_STORAGE);
     return saved ? JSON.parse(saved) : [{ role: "system", content: "Ты опытный психолог с 30 летним стажем" }];
   });
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
@@ -49,7 +47,7 @@ export function ChatCommunication({changeType}: Props) {
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(messages));
+    localStorage.setItem(CHAT_LOCAL_STORAGE, JSON.stringify(messages));
   }, [messages]);
 
   return (
