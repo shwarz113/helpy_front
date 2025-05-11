@@ -1,7 +1,5 @@
 import {useConversation} from "@11labs/react";
 
-await navigator.mediaDevices.getUserMedia({ audio: true });
-
 export const useSpeech = () => {
   const {startSession, status, endSession, isSpeaking} = useConversation({
     agentId: '0EAVI2pWVh1NyMXLODy7',

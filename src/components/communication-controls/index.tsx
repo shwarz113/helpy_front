@@ -6,7 +6,8 @@ import {CommunicationProps} from "./types";
 import styles from './index.module.css'
 import {cls} from "../../utils/classnames.ts";
 
-export const CommunicationControls = ({type, changeType, sendVoiceMessage, sendTextMessage,  startCall, endCall, statusCall}: CommunicationProps) => {
+export const CommunicationControls = (props: CommunicationProps) => {
+  const { type, changeType } = props
   return (
     <div>
       <div className={styles.tabs}>
@@ -20,9 +21,9 @@ export const CommunicationControls = ({type, changeType, sendVoiceMessage, sendT
           </div>
         ))}
       </div>
-      {type === COMMUNICATION_TYPE.TEXT && (<TextForm sendMessage={sendTextMessage} />)}
-      {type === COMMUNICATION_TYPE.VOICE && (<VoiceForm sendMessage={sendVoiceMessage} />)}
-      {type === COMMUNICATION_TYPE.CALL && (<CallForm start={startCall} end={endCall} status={statusCall} />)}
+      {type === COMMUNICATION_TYPE.TEXT && (<TextForm sendMessage={props.sendTextMessage} />)}
+      {type === COMMUNICATION_TYPE.VOICE && (<VoiceForm />)}
+      {type === COMMUNICATION_TYPE.CALL && (<CallForm start={props.startCall} end={props.endCall} status={props.statusCall} />)}
     </div>
   )
 }

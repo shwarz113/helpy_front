@@ -17,7 +17,7 @@ export function ChatCommunication({changeType}: Props) {
     const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
     return saved ? JSON.parse(saved) : [{ role: "system", content: "Ты опытный психолог с 30 летним стажем" }];
   });
-  const messagesEndRef = useRef(null);
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   const sendMessage = useCallback(async (input: string) => {
     if (!input.trim()) return;

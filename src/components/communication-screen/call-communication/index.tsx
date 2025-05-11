@@ -14,7 +14,7 @@ export const CallCommunication = ({changeType}: Props) => {
   const [id, setId] = useState('');
 
   const handleCall = () => {
-    startSession().then(setId);
+    return startSession().then(setId);
   }
 
   useEffect(() => {
@@ -30,6 +30,18 @@ export const CallCommunication = ({changeType}: Props) => {
       }, 500)
     }
   }, [status, id]);
+
+  useEffect(() => {
+    const startAudio = async () => {
+      try {
+        await navigator.mediaDevices.getUserMedia({ audio: true })
+      } catch (err) {
+        console.error('Ошибка доступа к микрофону', err)
+      }
+    }
+
+    startAudio()
+  }, [])
 
   return (
     <>

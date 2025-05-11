@@ -22,4 +22,7 @@ type CallProps = {
   endCall: () => Promise<void>
 }
 
-export type CommunicationProps = CommonProps & (VoiceProps | TextProps | CallProps)
+export type CommunicationProps =
+  | (CommonProps & VoiceProps)
+  | (CommonProps & TextProps)
+  | (CommonProps & CallProps)

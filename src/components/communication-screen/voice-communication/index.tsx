@@ -16,6 +16,7 @@ export const VoiceCommunication = ({changeType}: Props) => {
       <CommunicationControls
         type={COMMUNICATION_TYPE.VOICE}
         changeType={changeType}
+        sendVoiceMessage={()=>Promise.resolve()}
       />
     </>
   )
