@@ -4,6 +4,7 @@ import {useCommunicationControls} from "./hooks/communication-controls.ts";
 import {COMMUNICATION_TYPE} from "./utils/constants.ts";
 import './App.css'
 import {VoiceCommunication} from "./components/communication-screen/voice-communication";
+import {Header} from "./components/header";
 
 function App() {
   const {type, changeType} = useCommunicationControls()
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className={'app'}>
       <div className={'wrapper'}>
+        <Header />
         {type === COMMUNICATION_TYPE.TEXT && (<ChatCommunication changeType={changeType} />)}
         {type === COMMUNICATION_TYPE.CALL && (<CallCommunication changeType={changeType} />)}
         {type === COMMUNICATION_TYPE.VOICE && (<VoiceCommunication changeType={changeType} />)}

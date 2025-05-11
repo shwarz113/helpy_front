@@ -11,5 +11,6 @@
     height: calc(100vh - 24px);
     margin: 0 auto;
     display: grid;
-    grid-template-rows: 1fr 120px;
+    grid-template-rows: 40px 1fr 160px;
+    overflow: hidden;
 }

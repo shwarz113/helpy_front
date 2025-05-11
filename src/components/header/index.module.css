@@ -1,0 +1,11 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.button {
+    padding: 8px;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 20px;
+}
